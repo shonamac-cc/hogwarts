@@ -28,7 +28,20 @@ post '/students' do # create
   erb( :create )
 end
 # edit
+get '/students/:id/edit' do
+  @student = Student.find( params[:id] )
+  erb( :edit )
+end
 
 # update
+post '/students/:id' do
+  Student.new( params ).update
+  redirect to '/students'
+end
 
 # destroy
+post '/students/:id/delete' do
+  student = Student.find( params[:id] )
+  student.delete()
+  redirect to '/students'
+end
