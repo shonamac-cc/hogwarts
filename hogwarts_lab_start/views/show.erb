@@ -1,7 +1,7 @@
 <p>First Name: <%= @student.first_name %></p>
 <p>Last Name: <%= @student.last_name %></p>
 <p>Age: <%= @student.age %></p>
-<p>House Id: <%= @student.house_id %></p>
+<p>House: <%= @student.house.name.capitalize() %></p>
 <p><a href="/students/<%= @student.id %>/edit">Edit Student</a></p>
 <form method="post" action="/students/<%= @student.id %>/delete">
   <input type="submit" value="Delete Student">
