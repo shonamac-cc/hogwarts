@@ -11,10 +11,9 @@
 
   <label for="house_select">Select House:</label>
   <select name="house_id" id="house_select">
-    <option value="<%= @house_id %>">Gryffindor</option>
-    <option value="<%= @house_id %>">Hufflepuff</option>
-    <option value="<%= @house_id %>">Ravenclaw</option>
-    <option value="<%= @house_id %>">Slytherin</option>
+    <% @houses.each do |house| %>
+    <option value=<%=house.id%>><%=house.name%></option>
+    <%end%>
   </select>
 
   <input type="submit" value="Enroll Student">
