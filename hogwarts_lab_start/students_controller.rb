@@ -32,7 +32,7 @@ end
 # edit
 get '/students/:id/edit' do
   @student = Student.find( params[:id] )
-  @house = House.find(params[:id ])
+  @house = House.all()
   erb( :edit )
 end
 
