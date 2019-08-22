@@ -81,6 +81,11 @@ class Student
     return student
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM students"
+    SqlRunner.run(sql)
+  end
+
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end

@@ -41,6 +41,11 @@ class House
     return houses
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM houses"
+    SqlRunner.run(sql)
+  end
+
   def self.map_items(house_data)
     return house_data.map { |house| House.new(house) }
   end
